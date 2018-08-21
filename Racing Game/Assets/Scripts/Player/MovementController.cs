@@ -5,15 +5,18 @@ using UnityEngine;
 public class MovementController : MonoBehaviour {
 
 
+    public bool controlsEnabled = true;
+
     float jumpVelocity;
     float gravity;
     Vector3 velocity;
-    bool gravityEnabled = true;
+    Vector3 rotation;
+    bool gravityEnabled = false;
     PlayerPhysics physics;
 
     float jumpHeight = 5;
     float timeToJumpApex = 0.3f;
-    float maxVerticalMoveSpeed = 10f;
+
 
 
 	void Start () {
@@ -42,7 +45,7 @@ public class MovementController : MonoBehaviour {
     }
 
     void Finish() {
-        physics.Move(velocity * Time.deltaTime);
+        physics.Move(velocity * Time.deltaTime, rotation);
     }
 
     

@@ -23,15 +23,7 @@ public class SpineController : MonoBehaviour {
 	
 
 
-
-
-
-
-
-
-
-
-
+    
     void AdjustLeftWheel() {
         leftWheel.transform.rotation = transform.rotation;
         leftWheel.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z) + transform.forward;
